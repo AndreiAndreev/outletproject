@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="DataSourceManagerImpl" format="xml" hash="257637851">
+  <component name="DataSourceManagerImpl" format="xml">
     <data-source source="LOCAL" name="heroku" uuid="ccb79bf0-4bd4-4c74-a062-271e54e4e74a">
       <driver-ref>postgresql</driver-ref>
       <synchronize>true</synchronize>
