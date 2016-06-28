@@ -3,7 +3,7 @@ package ru.outletproject.model;
 
 public class Dish extends NamedEntity{
 
-    private int price;
+    protected int price;
 
 
     public Dish(Integer id, String name, int price) {
@@ -20,4 +20,12 @@ public class Dish extends NamedEntity{
         this.price = price;
     }
 
+    @Override
+    public String toString() {
+        return "User (" +
+                "id=" + id +
+                ", name=" + name +
+                ", price=" + price +
+                ')';
+    }
 }

@@ -42,5 +42,12 @@ public class Menu extends BaseEntity{
         this.dishes = dish;
     }
 
-
+    @Override
+    public String toString() {
+        return "User (" +
+                "id=" + id +
+                ", dishes=" + dishes +
+                ", dateTime=" + dateTime +
+                ')';
+    }
 }

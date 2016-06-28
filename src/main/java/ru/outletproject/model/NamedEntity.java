@@ -3,7 +3,7 @@ package ru.outletproject.model;
 
 public class NamedEntity extends BaseEntity{
 
-    private String name;
+    protected String name;
 
     public NamedEntity(){
     }

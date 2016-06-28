@@ -43,4 +43,14 @@ public class Restaurant extends NamedEntity{
     public void setMenu(Menu menu) {
         this.menu = menu;
     }
+
+    @Override
+    public String toString() {
+        return "User (" +
+                "id=" + id +
+                ", name=" + name +
+                ", menu=" + menu +
+                ", votes=" + votes +
+                ')';
+    }
 }
