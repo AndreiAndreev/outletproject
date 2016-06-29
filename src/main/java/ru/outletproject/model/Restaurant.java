@@ -16,7 +16,7 @@ public class Restaurant extends NamedEntity{
 
     @Column(name = "votes", nullable = false)
     @NotEmpty
-    protected AtomicInteger votes;
+    protected Integer votes;
 
 
     public Restaurant(){
@@ -33,14 +33,14 @@ public class Restaurant extends NamedEntity{
     public Restaurant(Integer id, String name, List<Dish> menu) {
         super(id, name);
         this.menu = menu;
-        this.votes = new AtomicInteger(0);
+        this.votes = 0;
     }
 
-    public AtomicInteger getVotes() {
+    public Integer getVotes() {
         return votes;
     }
 
-    public void setVotes(AtomicInteger votes) {
+    public void setVotes(Integer votes) {
         this.votes = votes;
     }
 

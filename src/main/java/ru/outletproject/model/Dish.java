@@ -35,6 +35,14 @@ public class Dish extends NamedEntity{
         this.price = price;
     }
 
+    public Restaurant getRestaurant() {
+        return restaurant;
+    }
+
+    public void setRestaurant(Restaurant restaurant) {
+        this.restaurant = restaurant;
+    }
+
     @Override
     public String toString() {
         return "User (" +
