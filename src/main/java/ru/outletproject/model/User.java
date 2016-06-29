@@ -1,23 +1,42 @@
 package ru.outletproject.model;
 
 
+import org.hibernate.validator.constraints.Email;
+import org.hibernate.validator.constraints.Length;
+import org.hibernate.validator.constraints.NotEmpty;
+
+import javax.persistence.*;
 import java.util.Date;
 import java.util.EnumSet;
 import java.util.Set;
-
+@Entity
+@Table(name = "users", uniqueConstraints = {@UniqueConstraint(columnNames = "email", name = "users_unique_email_idx")})
 public class User extends NamedEntity{
 
+    @Column(name = "email", unique = true, nullable = false)
+    @Email
+    @NotEmpty
     private String email;
 
+    @Column(name = "password", nullable = false)
+    @NotEmpty
+    @Length(min = 5)
     private String password;
 
+    @Column(name = "enabled", nullable = false)
     protected boolean enabled = true;
 
+    @Enumerated(EnumType.STRING)
+    @CollectionTable(name = "user_roles", joinColumns = @JoinColumn(name = "user_id"))
+    @Column(name = "role")
+    @ElementCollection(fetch = FetchType.EAGER)
     protected Set<Role> roles;
 
+    @Column(name = "registered", columnDefinition = "timestamp default now()")
     protected Date registered = new Date();
 
-
+    public User(){
+    }
     public User(User u) {
         this(u.getId(), u.getName(), u.getEmail(), u.getPassword(), u.isEnabled(), u.getRoles());
     }

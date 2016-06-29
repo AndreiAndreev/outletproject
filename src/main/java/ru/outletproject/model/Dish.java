@@ -1,10 +1,25 @@
 package ru.outletproject.model;
 
+import com.sun.istack.internal.NotNull;
+import org.hibernate.validator.constraints.Range;
 
+import javax.persistence.*;
+
+@Entity
+@Table(name = "restaurants_dishes")
 public class Dish extends NamedEntity{
 
+    @Column(name = "price")
+    @NotNull
+    @Range(min = 10, max = 5000)
     protected int price;
 
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "dish_id", nullable = false)
+    protected Restaurant restaurant;
+
+
+    public Dish(){}
 
     public Dish(Integer id, String name, int price) {
         super(id, name);
