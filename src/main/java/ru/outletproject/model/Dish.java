@@ -5,6 +5,7 @@ import org.hibernate.validator.constraints.Range;
 
 import javax.persistence.*;
 
+@SuppressWarnings("JpaQlInspection")
 @Entity
 @Table(name = "restaurants_dishes")
 public class Dish extends NamedEntity{
