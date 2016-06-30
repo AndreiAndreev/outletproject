@@ -12,10 +12,10 @@ import java.util.List;
 public class DataJpaDishesRepositoryImpl implements DishesRepository{
 
     @Autowired
-    ProxyDishesRepository proxy;
+    private ProxyDishesRepository proxy;
 
     @Autowired
-    ProxyRestaurantRepository restaurantProxy;
+    private ProxyRestaurantRepository restaurantProxy;
 
     @Override
     public boolean delete(int restaurantId, int dishId) {

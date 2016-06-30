@@ -12,7 +12,7 @@ import java.util.List;
 public class DataJpaRestaurantRepositoryImpl implements RestaurantRepository{
 
     @Autowired
-    ProxyRestaurantRepository proxy;
+    private ProxyRestaurantRepository proxy;
 
 
     @Override
