@@ -11,6 +11,7 @@ import ru.outletproject.util.exception.ExceptionUtil;
 import ru.outletproject.util.exception.NotFoundException;
 
 import java.util.List;
+import java.util.Objects;
 
 @Service("restaurantService")
 public class RestaurantServiceImpl implements RestaurantService {
@@ -21,6 +22,7 @@ public class RestaurantServiceImpl implements RestaurantService {
     @CacheEvict(value = "restaurants", allEntries = true)
     @Override
     public Restaurant save(Restaurant restaurant) {
+        Objects.requireNonNull(restaurant);
         return repository.save(restaurant);
     }
 
@@ -38,6 +40,7 @@ public class RestaurantServiceImpl implements RestaurantService {
     @CacheEvict(value = "restaurants", allEntries = true)
     @Override
     public void update(RestaurantTo restaurantTo) {
+        Objects.requireNonNull(restaurantTo);
         Restaurant newRestaurant = get(restaurantTo.getId());
         repository.save(newRestaurant);
     }
@@ -51,6 +54,7 @@ public class RestaurantServiceImpl implements RestaurantService {
     @CacheEvict(value = "restaurants", allEntries = true)
     @Override
     public void update(Restaurant restaurant) {
+        Objects.requireNonNull(restaurant);
         repository.save(restaurant);
     }
 

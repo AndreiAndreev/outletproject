@@ -6,15 +6,15 @@ import ru.outletproject.util.exception.NotFoundException;
 import java.util.Collection;
 
 public interface DishService {
-    Dish get(int id, int userId) throws NotFoundException;
+    Dish get(int id, int restaurantId) throws NotFoundException;
 
-    void delete(int id, int userId) throws NotFoundException;
+    void delete(int id, int restaurantId) throws NotFoundException;
 
-    Collection<Dish> getAll(int userId);
+    Collection<Dish> getAll(int restaurantId);
 
-    Dish update(Dish meal, int userId) throws NotFoundException;
+    Dish update(Dish dish, int restaurantId) throws NotFoundException;
 
-    Dish save(Dish meal, int userId);
+    Dish save(Dish dish, int restaurantId);
 
-    Dish getWithUser(Integer id, Integer userId);
+    Dish getWithRestaurant(Integer id, Integer restaurantId);
 }
