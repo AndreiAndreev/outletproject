@@ -31,7 +31,7 @@ public class DataJpaRestaurantRepositoryImpl implements RestaurantRepository{
     }
 
     @Override
-    public List<Restaurant> getAlll() {
+    public List<Restaurant> getAll() {
         return proxy.findAll();
     }
 

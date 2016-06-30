@@ -13,17 +13,13 @@ public interface RestaurantService {
 
     Restaurant get(int id) throws NotFoundException;
 
-    Restaurant getByEmail(String email) throws NotFoundException;
-
-    void update(RestaurantTo user);
+    void update(RestaurantTo restaurantTo);
 
     List<Restaurant> getAll();
 
-    void update(Restaurant user);
+    void update(Restaurant restaurant);
 
     void evictCache();
-
-    void enable(int id, boolean enable);
 
     Restaurant getWithDishes(int id);
 }
