@@ -3,6 +3,7 @@ package ru.outletproject.model;
 import org.hibernate.annotations.Cache;
 import org.hibernate.annotations.CacheConcurrencyStrategy;
 import org.hibernate.validator.constraints.NotEmpty;
+import org.hibernate.validator.constraints.Range;
 
 import javax.persistence.*;
 import java.util.List;
@@ -18,25 +19,28 @@ public class Restaurant extends NamedEntity{
 
     @Column(name = "votes", nullable = false)
     @NotEmpty
-    protected Integer votes;
+    @Range(min = 5,max = 100000)
+    protected Integer votes = 0;
 
 
     public Restaurant(){
     }
 
     public Restaurant(Restaurant r){
-        this(r.getId(), r.getName(), r.getMenu());
+        this(r.getId(), r.getName(), r.getMenu(), r.getVotes());
     }
 
-    public Restaurant(String name, List<Dish> menu){
-        this(null, name,  menu);
+    public Restaurant(String name, List<Dish> menu, Integer votes){
+        this(null, name,  menu, votes);
     }
 
-    public Restaurant(Integer id, String name, List<Dish> menu) {
+    public Restaurant(Integer id, String name, List<Dish> menu, Integer votes) {
         super(id, name);
         this.menu = menu;
-        this.votes = 0;
+        this.votes = votes;
     }
+
+
 
     public Integer getVotes() {
         return votes;
