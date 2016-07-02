@@ -22,4 +22,6 @@ public interface RestaurantService {
     void evictCache();
 
     Restaurant getWithDishes(int id);
+
+    void vote(int id);
 }

@@ -27,16 +27,15 @@ public class Restaurant extends NamedEntity{
     }
 
     public Restaurant(Restaurant r){
-        this(r.getId(), r.getName(), r.getMenu(), r.getVotes());
+        this(r.getId(), r.getName(), r.getVotes());
     }
 
-    public Restaurant(String name, List<Dish> menu, Integer votes){
-        this(null, name,  menu, votes);
+    public Restaurant(String name, Integer votes){
+        this(null, name, votes);
     }
 
-    public Restaurant(Integer id, String name, List<Dish> menu, Integer votes) {
+    public Restaurant(Integer id, String name, Integer votes) {
         super(id, name);
-        this.menu = menu;
         this.votes = votes;
     }
 
@@ -48,14 +47,6 @@ public class Restaurant extends NamedEntity{
 
     public void setVotes(Integer votes) {
         this.votes = votes;
-    }
-
-    public List<Dish> getMenu() {
-        return menu;
-    }
-
-    public void setMenu(List<Dish> menu) {
-        this.menu = menu;
     }
 
     @Override

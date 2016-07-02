@@ -3,8 +3,10 @@ DROP TABLE IF EXISTS user_roles;
 DROP TABLE IF EXISTS restaurants CASCADE ;
 DROP TABLE IF EXISTS restaurants_dishes;
 DROP SEQUENCE IF EXISTS users_seq;
+DROP SEQUENCE IF EXISTS rest_seq;
 
 CREATE SEQUENCE users_seq START 100000;
+CREATE SEQUENCE rest_seq START 100000;
 
 CREATE TABLE users
 (
@@ -28,7 +30,7 @@ CREATE TABLE user_roles
 
 CREATE TABLE restaurants
 (
-  id        INTEGER PRIMARY KEY DEFAULT nextval('users_seq'),
+  id        INTEGER PRIMARY KEY DEFAULT nextval('rest_seq'),
   name      VARCHAR NOT NULL,
   votes     INTEGER NOT NULL
 );

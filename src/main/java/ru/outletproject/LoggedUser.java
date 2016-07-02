@@ -11,14 +11,14 @@ import static java.util.Objects.requireNonNull;
 
 public class LoggedUser extends org.springframework.security.core.userdetails.User {
     private static final long serialVersionUID = 1L;
+    private static int id = BaseEntity.START_SEQ;
+
 
     private UserTo userTo;
     public LoggedUser(User user) {
         super(user.getEmail(), user.getPassword(), user.isEnabled(), true, true, true, user.getRoles());
         this.userTo = UserUtil.asTo(user);
     }
-
-    private static int id = BaseEntity.START_SEQ;
 
     public static LoggedUser safeGet() {
         Authentication auth = SecurityContextHolder.getContext().getAuthentication();

@@ -67,4 +67,9 @@ public class RestaurantServiceImpl implements RestaurantService {
     public Restaurant getWithDishes(int id) {
         return ExceptionUtil.check(repository.getWithDishes(id), id);
     }
+
+    @Override
+    public void vote(int id) {
+        ExceptionUtil.check(repository.vote(id), id);
+    }
 }

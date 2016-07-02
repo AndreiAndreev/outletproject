@@ -2,6 +2,7 @@ DELETE FROM restaurants;
 DELETE FROM user_roles;
 DELETE FROM users;
 ALTER SEQUENCE users_seq RESTART WITH 100000;
+ALTER SEQUENCE rest_seq RESTART WITH 100000;
 
 
 INSERT INTO users(name, email, password)VALUES
@@ -21,8 +22,8 @@ INSERT INTO restaurants(name, votes) VALUES
 
 
 INSERT INTO restaurants_dishes(dish_id, name, price) VALUES
-  (100003,'dish1', 100),
-  (100004,'dish2', 300),
-  (100004,'dish3', 400);
+  (100000,'dish1', 100),
+  (100001,'dish2', 300),
+  (100001,'dish3', 400);
 
 
