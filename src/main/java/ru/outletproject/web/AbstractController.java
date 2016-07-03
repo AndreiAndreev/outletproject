@@ -20,6 +20,7 @@ public abstract class AbstractController {
     @Autowired
     private UserService userService;
 
+    @Autowired
     private RestaurantService restaurantService;
 
 //    <---------UserService---------->
