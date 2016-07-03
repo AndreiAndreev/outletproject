@@ -92,10 +92,6 @@ public abstract class AbstractController {
         restaurantService.update(restaurantTo);
     }
 
-    public Restaurant getWithDishes(int id){
-        return restaurantService.getWithDishes(id);
-    }
-
     public void vote(int id){
         restaurantService.vote(id);
     }
