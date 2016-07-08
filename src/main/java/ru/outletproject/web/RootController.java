@@ -34,7 +34,7 @@ public class RootController extends AbstractController {
 
     @RequestMapping(value = "/restaurants", method = RequestMethod.GET)
     public String restaurantList(){
-        return "restaurantList";
+        return "restaurantsList";
     }
 
     @RequestMapping(value = "/login", method = RequestMethod.GET)
@@ -71,7 +71,7 @@ public class RootController extends AbstractController {
     @PreAuthorize("hasRole('ROLE_ADMIN')")
     @RequestMapping(value = "/restaurantsProfile", method = RequestMethod.GET)
     public String restaurantsProfile(){
-        return "restaurantsProfile";
+        return "restaurantProfile";
     }
 
     @PreAuthorize("hasRole('ROLE_ADMIN')")
@@ -118,7 +118,7 @@ public class RootController extends AbstractController {
     public String registerRestaurant(ModelMap model){
         model.addAttribute("restaurantTo", new RestaurantTo());
         model.addAttribute("newRest", this);
-        return "restaurantsProfile";
+        return "profile";
     }
 
     @PreAuthorize("hasRole('ROLE_ADMIN')")
@@ -134,6 +134,6 @@ public class RootController extends AbstractController {
             }
         }
         model.addAttribute("newRest", this);
-        return "restaurantsProfile";
+        return "profile";
     }
 }

@@ -7,5 +7,11 @@
       <jdbc-driver>org.postgresql.Driver</jdbc-driver>
       <jdbc-url>jdbc:postgresql://ec2-107-22-246-250.compute-1.amazonaws.com:5432/dfggv7iv2ci71n?ssl=true&amp;sslfactory=org.postgresql.ssl.NonValidatingFactory</jdbc-url>
     </data-source>
+    <data-source source="LOCAL" name="HSQLDB" uuid="8cdb9f5c-739b-42bf-b220-9dbd5cd25791">
+      <driver-ref>hsqldb.local</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>org.hsqldb.jdbc.JDBCDriver</jdbc-driver>
+      <jdbc-url>jdbc:hsqldb:mem:outlet</jdbc-url>
+    </data-source>
   </component>
 </project>
