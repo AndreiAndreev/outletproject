@@ -18,7 +18,7 @@ import javax.validation.Valid;
 import java.util.List;
 
 @RestController
-@RequestMapping(value = "/ajax/admin/restaurants")
+@RequestMapping(value = "/ajax/profile/restaurants")
 public class RestaurantAdminAjaxController extends AbstractController {
 
     @Autowired

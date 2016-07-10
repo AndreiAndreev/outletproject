@@ -4,12 +4,12 @@ import javax.persistence.*;
 
 @MappedSuperclass
 @Access(AccessType.FIELD)
-public class BaseEntity {
+public class BaseRestaurant {
     public static final int START_SEQ = 100000;
 
     @Id
-    @SequenceGenerator(name = "users_seq", sequenceName = "users_seq", allocationSize = 1)
-    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "users_seq")
+    @SequenceGenerator(name = "rest_seq", sequenceName = "rest_seq", allocationSize = 1)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "rest_seq")
     protected Integer id;
 
     public Integer getId() {
@@ -24,10 +24,10 @@ public class BaseEntity {
         return (this.id == null);
     }
 
-    public BaseEntity() {
+    public BaseRestaurant() {
     }
 
-    protected BaseEntity(Integer id) {
+    protected BaseRestaurant(Integer id) {
         this.id = id;
     }
 
@@ -36,7 +36,7 @@ public class BaseEntity {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
 
-        BaseEntity that = (BaseEntity) o;
+        BaseRestaurant that = (BaseRestaurant) o;
 
         return !(id != null ? !id.equals(that.id) : that.id != null);
 

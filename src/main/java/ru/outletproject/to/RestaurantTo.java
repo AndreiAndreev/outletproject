@@ -1,6 +1,8 @@
 package ru.outletproject.to;
 
 import org.hibernate.validator.constraints.NotEmpty;
+import org.hibernate.validator.constraints.Range;
+
 import javax.validation.constraints.Size;
 import java.io.Serializable;
 
@@ -13,8 +15,8 @@ public class RestaurantTo implements Serializable {
     protected String name;
 
     @NotEmpty
-    @Size(min = 5, max = 100000)
-    protected Integer votes;
+    @Range(min = 5, max = 100000)
+    protected int votes;
 
     public RestaurantTo() {
     }

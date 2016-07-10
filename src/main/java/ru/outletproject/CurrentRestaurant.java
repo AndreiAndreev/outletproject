@@ -2,13 +2,13 @@ package ru.outletproject;
 
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
-import ru.outletproject.model.BaseEntity;
+import ru.outletproject.model.BaseUser;
 import ru.outletproject.to.RestaurantTo;
 
 import static java.util.Objects.requireNonNull;
 
 public class CurrentRestaurant {
-    private static int id = BaseEntity.START_SEQ;
+    private static int id = BaseUser.START_SEQ;
 
     private RestaurantTo restaurantTo;
 

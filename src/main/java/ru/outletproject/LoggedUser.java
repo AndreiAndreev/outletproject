@@ -2,7 +2,7 @@ package ru.outletproject;
 
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
-import ru.outletproject.model.BaseEntity;
+import ru.outletproject.model.BaseUser;
 import ru.outletproject.model.User;
 import ru.outletproject.to.UserTo;
 import ru.outletproject.util.UserUtil;
@@ -11,7 +11,7 @@ import static java.util.Objects.requireNonNull;
 
 public class LoggedUser extends org.springframework.security.core.userdetails.User {
     private static final long serialVersionUID = 1L;
-    private static int id = BaseEntity.START_SEQ;
+    private static int id = BaseUser.START_SEQ;
 
 
     private UserTo userTo;

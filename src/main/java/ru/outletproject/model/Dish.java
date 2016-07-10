@@ -8,7 +8,7 @@ import javax.persistence.*;
 @SuppressWarnings("JpaQlInspection")
 @Entity
 @Table(name = "restaurants_dishes")
-public class Dish extends NamedEntity{
+public class Dish extends NamedRestaurant {
 
     @Column(name = "price")
     @NotNull

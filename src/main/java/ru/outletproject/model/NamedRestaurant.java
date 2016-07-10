@@ -1,21 +1,20 @@
 package ru.outletproject.model;
 
 import org.hibernate.validator.constraints.NotEmpty;
-
 import javax.persistence.Column;
 import javax.persistence.MappedSuperclass;
 
 @MappedSuperclass
-public class NamedEntity extends BaseEntity{
+public class NamedRestaurant extends BaseRestaurant{
 
     @NotEmpty
     @Column(name = "name", nullable = false)
     protected String name;
 
-    public NamedEntity(){
+    public NamedRestaurant(){
     }
 
-    protected NamedEntity(Integer id, String name){
+    protected NamedRestaurant(Integer id, String name){
         super(id);
         this.name = name;
     }
@@ -30,7 +29,7 @@ public class NamedEntity extends BaseEntity{
 
     @Override
     public String toString() {
-        return "NamedEntity{" +
+        return "NamedUser{" +
                 "name='" + name + '\'' +
                 '}';
     }
